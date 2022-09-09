@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <style>
+        
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+input{
+  display:block;
+  width:100%;
+  padding:.2em;
+  margin: .2em 0 .6em;
+  font-size:1.2em;
+}
+input[type=submit]{
+  background: local;
+  background-color: darkblue;
+  border:none;
+  margin:20px;
+  color: rgb(23, 201, 47);
+  padding:1em;
+  font-weight: 600;
+  font-size:larger;
+}
+
+
+html{
+  background: fixed;
+  background-color: lightpink;
+}
+body{
+  padding:5%;
+  background: white;
+  max-width:30em;
+  margin: 6% auto;
+  box-shadow:1em 1em 0 0 rgba(0,0,0,.2);
+  font-family:Raleway, sans-serif;
+}
+    </style>
+</head>
+<body>
+    <h1>Log in</h1>
+
+
+<form class="login-form" id="form-id" method="get">
+  <label>Username:</label>
+  <input type="text" id="name" name="username" required>
+
+  <label>Password:</label>
+  <input type="password" id="pass" name="password" required>
+
+  <input type="submit" value="Log In" onclick="login_details()">
+  <br>
+  <p> Do Not have an account? <a href="Register.html">So Create One</a></p>
+  <p> Back to Main page <a href="Page.html">Home</a></p>
+</form>
+  <script>
+    function login_details(){
+        var password=document.getElementById("pass").value;
+        var username=document.getElementById("name").value;
+        document.getElementById("form-id").submit();
+        if(username=="" && password==""){
+            alert("Mention the username and Password");
+            var error = document.getElementById("pass","pass");
+            error.style.borderStyle = 'solid';
+            error.style.borderColor = 'red';
+        }
+        else if(username=="" || password==""){
+            alert("Your field is missing");
+            
+        }
+        else{
+            alert("Sucessfully loged In with the username : "+username+" Password: "+ password+" On "+Date())
+        }
+        
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Bonus Calculation</title>
+    <style>
+        body{
+            background-color: aqua;
+        }
+        body button{
+            margin-left: 40%;
+            padding: 20px 30px;
+            color: black;
+            font-size: x-large;
+            box-shadow: 10px 10px grey;
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+<body>
+<h1 style="text-align: center; color:darkblue;">Salary Bonus Calculation</h1>
+<h3 style="text-align: center; color:crimson;">Click here to calculation of Bonus</h3>
+<button onclick="myFunction()">Calculate the Bounus</button>
+
+<p id="demo" style="text-align: center; color:orangered; font-size: x-large;" ></p>
+
+<script>
+function myFunction() {
+  var domain1 = prompt("Please enter your Domin", "Your Domin like IT, Testing, Admin, other");
+  var salary1 = prompt("Please enter your salary", "Your Salary in interger or numbers");
+
+    var t=new bonus();
+
+document.getElementById("demo").innerHTML=t.bonus_calculation(domain1,salary1);
+
+  }
+  class bonus{
+    
+    bonus_calculation(domain1,salary1){
+        var bonus1;
+        if(domain1=="IT"){
+            bonus1=(salary1*50)/100;
+            salary1=parseInt(salary1)+parseInt(bonus1);
+            return "Your Bonus is: "+bonus1+" Total salary is : "+ salary1;
+        }
+        else if(domain1=="Testing"){
+            bonus1=(salary1*45)/100;
+            salary1=parseInt(salary1)+parseInt(bonus1);
+            return "Your Bonus is: "+bonus1+" Total salary is : "+ salary1;
+        }
+        else if(domain1=="Admin"){
+            bonus1=(salary1*30)/100;
+            salary1=parseInt(salary1)+parseInt(bonus1);
+            return "Your Bonus is: "+bonus1+" Total salary is : "+ salary1;
+        }
+        else{
+            bonus1=(salary1*20)/100;
+            salary1=parseInt(salary1)+parseInt(bonus1);
+            return "Your Bonus is: "+bonus1+" Total salary is : "+ salary1;
+        }
+    }
+
+  }
+
+
+</script>
+</body>
+</html>
